@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BaoYanMessage | 2027 预推免 / 夏令营信息</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <span class="hero-badge">@Ezcan</span>
+            <h1>2027 预推免 / 夏令营信息</h1>
+            <p class="hero-desc">
+                当前仅展示已核验的官方通知，暂收录东北大学面向 2023 级具备推免资格本科生开放简历投递通道的信息。
+            </p>
+            <div class="hero-tips">
+                <span>按学校搜索</span>
+                <span>按专业检索</span>
+                <span>按年份筛选</span>
+                <span>按类型筛选</span>
+                <span>官方来源优先</span>
+            </div>
+        </header>
+
+        <main class="content-card">
+            <section class="toolbar" aria-label="筛选工具栏">
+                <label class="control">
+                    <span>搜索学校</span>
+                    <input id="schoolSearch" type="search" placeholder="例如：东北大学" />
+                </label>
+
+                <label class="control">
+                    <span>检索专业</span>
+                    <input id="majorSearch" type="search" placeholder="例如：计算机、人工智能、全校综合" />
+                </label>
+
+                <label class="control">
+                    <span>筛选年份</span>
+                    <select id="yearFilter">
+                        <option value="">全部年份</option>
+                    </select>
+                </label>
+
+                <label class="control">
+                    <span>筛选类型</span>
+                    <select id="typeFilter">
+                        <option value="">全部类型</option>
+                        <option value="保研">保研</option>
+                        <option value="夏令营">夏令营</option>
+                    </select>
+                </label>
+
+                <div class="action-group">
+                    <button id="importButton" class="action-button primary-button" type="button">导入 2027 官方 CSV</button>
+                    <button id="resetButton" class="action-button reset-button" type="button">清空筛选</button>
+                </div>
+            </section>
+
+            <section class="summary" aria-live="polite">
+                <div class="summary-item">
+                    <strong id="resultCount">0</strong>
+                    <span>条可见信息</span>
+                </div>
+                <div class="summary-item">
+                    <strong id="urgentCount">0</strong>
+                    <span>条临近截止</span>
+                </div>
+                <p id="statusText" class="status-text">正在加载数据...</p>
+            </section>
+
+            <section class="table-section">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>school</th>
+                                <th>major</th>
+                                <th>type</th>
+                                <th>year</th>
+                                <th>title</th>
+                                <th>deadline</th>
+                                <th>url</th>
+                                <th>notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+
+                <p id="emptyState" class="empty-state hidden">暂未检索到更多已核验的 2027 级官方信息。</p>
+                <p class="update-note">持续更新中</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>
